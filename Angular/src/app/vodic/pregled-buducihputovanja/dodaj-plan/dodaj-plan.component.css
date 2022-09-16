@@ -1,0 +1,15 @@
+.loginforma{
+  margin:10%;
+  width: 100%;
+  height: 100%;
+}
+input{
+  width: 200%;
+}
+textarea{
+  width: 200%;
+}
+label{
+  color:black;
+}
+

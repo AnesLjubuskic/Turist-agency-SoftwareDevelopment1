@@ -1,0 +1,94 @@
+/*
+*{
+  box-sizing: border-box;
+}
+.flexContainer{
+  display: flex;
+}
+button{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 150px;
+  height: 100px;
+}
+.container{
+  margin-top: 10px;
+  width: 200px;
+}
+.content{
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border:2px solid darkblue;
+  width:80%;
+  margin-right:20px;
+}
+*/
+
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 18%;
+  border-right: none;
+  background: #525856;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  display: block;
+}
+
+.content {
+  height: 100%;
+
+  margin: 20px;
+  margin-left: 32px;
+  border: none;
+  display: flex;
+  /*justify-content: center;*/
+ padding-left: 2%;
+  padding-top: 1%;
+  align-items: start;
+  font-size: 3rem;
+  color: lightgray;
+  overflow-y: scroll;
+
+}
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.menu-button
+{
+  font-size: medium;
+  margin-bottom: 5%;
+}
+
+button{
+  width: 100%;
+  display: inline;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: darkcyan;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkcyan;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkcyan;
+}

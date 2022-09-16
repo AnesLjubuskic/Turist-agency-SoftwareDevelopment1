@@ -1,0 +1,17 @@
+.kontenjer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/img/putujmozajedno.png");
+}
+.hvala{
+  font-size: 64px;
+  font-family: Calibri;
+  color: rgba(255,255,255,0.8);
+  font-weight: bold;
+  margin: 10% 5% 0 0;
+  text-shadow: 8px 8px 12px #000;
+  line-height: 70px;
+  text-align: right;
+}

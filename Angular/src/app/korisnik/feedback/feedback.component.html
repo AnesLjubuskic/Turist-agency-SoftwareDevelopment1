@@ -1,0 +1,18 @@
+<!--
+<app-navigacija></app-navigacija>
+
+<div class="content mat-elevation-z9" style="height: 82vh; width: 80vw; margin-top: 2%; margin-left: 10%; padding:2%;">
+  <app-feedback-postavi></app-feedback-postavi>
+</div>
+-->
+
+<div class="glavni">
+  <div class="dugme">
+  <button class="btn btn-primary" (click)="dodajFeedback()">Feedback</button><button class="btn btn-primary" (click)="home()">Home</button>
+  </div>
+<div class="container" *ngFor="let s of feedbacks">
+  <h1>{{s.ime}}</h1>
+  <p  class="limit">{{s.sadrzaj}}</p>
+</div>
+</div>
+

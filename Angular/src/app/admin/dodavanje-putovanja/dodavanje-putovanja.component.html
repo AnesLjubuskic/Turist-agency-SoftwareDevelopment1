@@ -1,0 +1,100 @@
+<div *ngIf="alert" class="alert alert-success" role="alert" >
+  Uspješno izvršeno dodavanje
+</div>
+<h1>Detalji putovanja</h1>
+<form [formGroup]="frmPutovanje" >
+
+  <label>Naziv:</label><br/>
+  <input type="text" class="form-control col-md-12"  formControlName="naziv"  aria-label="Ime" aria-describedby="basic-addon1"  placeholder="Naziv putovanja" [(ngModel)]="naziv">
+  <small *ngIf="frmPutovanje.get('naziv')!.invalid && frmPutovanje.get('naziv')!.touched" class="text-danger" >Unos obavezan</small><br/>
+
+  <label>Tip putovanja:</label><br/>
+    <select  class="form-control  col-md-12" formControlName="tipPutovanja" [(ngModel)]="tipPutovanja">
+      <option  *ngFor="let x of tipovi" [value]=x>{{x}}</option>
+    </select>
+    <small *ngIf="frmPutovanje.get('tipPutovanja')!.invalid && frmPutovanje.get('tipPutovanja')!.touched" class="text-danger" >Unos obavezan</small><br/>
+
+
+
+  <label class="form-label col-md-4">Broj putnika:</label>
+  <label class="form-label col-md-4">Cijena:</label>
+  <label class="form-label col-md-4">Trajanje:</label>
+
+  <div style="display: flex; justify-content: space-between">
+    <input type="number" formControlName="brojPutnika" class="form-control col-md-3"    [(ngModel)]='brojPutnika' placeholder="Broj putnika"><br/>
+    <small *ngIf="frmPutovanje.get('brojPutnika')!.invalid && frmPutovanje.get('brojPutnika')!.touched" class="text-danger" >Unos obavezan</small><br/>
+    <input type="number" formControlName="cijena"  class="form-control col-md-3"    [(ngModel)]='cijena' placeholder="00.00"><br/>
+    <input type="number" formControlName="trajanje" class="form-control col-md-3"     [(ngModel)]='trajanje' placeholder="0"><br/>
+
+  </div>
+
+<div style="margin-top: 2%; text-align: left">
+  <div style="display: flex; justify-content: space-between">
+  <label  class="form-label col-md-5">Datum od:</label>
+  <label  class="form-label col-md-5">Datum do:</label>
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <input type="date" formControlName="datumOd" class="form-control col-md-5"   aria-describedby="emailHelp" [(ngModel)]='datumOd'>
+    <input type="date"  formControlName="datumDo" class="form-control col-md-5"  aria-describedby="emailHelp" [(ngModel)]='datumDo'>
+  </div>
+</div>
+
+  <div style="margin-top: 2%">
+    <label>Slika:</label><br/>
+    <input type="file"  ngf class="form-control" (change)="onChange($event)"   >
+  </div>
+  <div class="divslika">
+    <img class="slika col-md-10" [src]="slika" formControlName="slika" [(ngModel)]="slika" />
+  </div>
+
+<!--<label>Prijevoz:</label><br/>
+<select  class="form-control"  [(ngModel)]='nazivPrijevoz' >
+  <option *ngFor="let x of listPrijevoz" [value]=x.id>{{x.naziv}}</option>
+</select>-->
+</form>
+
+<button [disabled]="frmPutovanje.invalid" (click)="PostPutovanje()" (click)="getPosljednjePutovanje()" class="btn btn-primary" style="margin-top: 2%; margin-left: 90%">Spasi</button>
+
+<h1>Detalji grad</h1>
+<div *ngIf="alertGrad" class="alert alert-success" role="alert" >
+  Uspješno izvršeno dodavanje grada
+</div>
+<form [formGroup]="frmGrad">
+
+  <label  class="form-label">Putovanje</label>
+  <select  class="form-control" formControlName="putovanjeId">
+    <option  *ngFor="let x of posljPut" [value]=x.id>{{x.naziv}}</option>
+  </select>
+
+  <label>Grad:</label><br/>
+  <select  class="form-control" formControlName="gradId">
+    <option *ngFor="let x of gradovi" [value]=x.id>{{x.naziv}}</option>
+  </select>
+</form>
+<button (click)="PostPutovanjeGrad()" class="btn btn-primary" style="margin-top: 2%; margin-left: 90%">Grad</button>
+
+<h1>Detalji smjestaj</h1>
+<div *ngIf="alertSmjestaj" class="alert alert-success" role="alert" >
+  Uspješno izvršeno dodavanje smještaja
+</div>
+<form [formGroup]="frmSmjestaj">
+
+  <label  class="form-label">Id:</label>
+  <select  class="form-control" formControlName="putovanjeId">
+    <option  *ngFor="let x of posljPut" [value]=x.id>{{x.naziv}}</option>
+  </select>
+
+  <label>Smjestaj:</label><br/>
+  <select  class="form-control" formControlName="smjestajId">
+    <option  *ngFor="let x of listSmjestaj" [value]=x.id>{{x.naziv}}</option>
+  </select>
+
+</form>
+<button (click)="PostPutovanjeSmjestaj()" class="btn btn-primary" style="margin-top: 2%; margin-left: 90%">Smjestaj</button>
+
+<h1>Detalji prijevoz</h1>
+<app-putovanje-prevoz></app-putovanje-prevoz>
+
+
+
+

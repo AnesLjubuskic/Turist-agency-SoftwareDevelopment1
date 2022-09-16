@@ -1,0 +1,23 @@
+
+<div class="tabela">
+  <table class="table table-secondary table-striped  table-bordered">
+    <tr class="thead-dark">
+      <th>Putovanje</th>
+      <th>Vodic</th>
+      <th>Broj putnika</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let s of getGrupePodaci()">
+      <td>{{s.putovanje.naziv}}</td>
+      <td>{{s.vodic.ime}} {{s.vodic.prezime}}</td>
+      <td>{{s.brojPutnika}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <mat-paginator [length]="this.grupePodaci.totalCount"
+                 [pageSize]="3"
+                 [pageSizeOptions]="[3,4,5]"
+                 aria-label="Select page"
+                 class="mat-elevation-z8">
+  </mat-paginator>
+</div>

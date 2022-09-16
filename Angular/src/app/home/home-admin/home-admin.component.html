@@ -1,0 +1,91 @@
+<app-home-main></app-home-main>
+<!--<div class="flexContainer">
+  <div class="container">
+    <button class="btn btn-primary">Pregled putnika</button>
+    <br>
+    <button routerLink="dodavanje-putovanja" class="btn btn-primary">Dodavanje putovanja</button>
+    <br>
+    <button [routerLink]="'register'" class="btn btn-primary">Dodavanje vodiča</button>
+    <br>
+    <button class="btn btn-primary">Pregled izvještaja</button>
+    <br>
+    <button [routerLink]="'prevoznasredstva'"   class="btn btn-primary">Evidencija prevoznih sredstava</button>
+    <br>
+    <button class="btn btn-primary">Pregled emaila</button>
+    <br>
+    <button [routerLink]="'dodavanjesmjestaja'" class="btn btn-primary">Dodavanje smještaja</button>
+    <br>
+  </div>
+  <div class="content">
+  <router-outlet></router-outlet>
+  </div>
+</div>-->
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8">
+    <button mat-button class="menu-button" [routerLink]="'obavijest'">
+      Notifikacije
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'pregled-rezervacija'">
+      Pregled putnika
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'dodavanje-putovanja'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Dodavanje putovanja
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'admin-pregled-putovanja'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Pregled putovanja
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'register'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Uposlenici
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'dodavanjesmjestaja'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Smjestaj
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'prevoznasredstva'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Prevozna sredstava
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'aplikacije'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Aplikacije za posao
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'pregled-rezervacija'" style="width: 100%; display: inline">
+      Rezervacije
+    </button>
+
+    <button mat-button class="menu-button" [routerLink]="'uplate'">
+      Evidencija placanja
+    </button>
+    <button mat-button class="menu-button" [routerLink]="'report'">
+      <!-- <mat-icon>home</mat-icon>
+       <span>Home</span>-->
+      Izvjestaji
+    </button>
+   <!-- <button mat-button class="menu-button" >
+      &lt;!&ndash; <mat-icon>home</mat-icon>
+       <span>Home</span>&ndash;&gt;
+      Pregled maila
+    </button>
+-->
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z9" style="height: 82vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,83 @@
+.putovanje-kartica{
+  border-radius: 10px;
+  border:2px solid darkblue;
+  background-color: white;
+  width:100%;
+}
+.slika{
+  height:250px;
+  width:400px;
+  padding:2px;
+  border-radius: 15px;
+  cursor:pointer;
+
+}
+.banner-naziv{
+  width:99%;
+  margin-right: auto;
+  margin-left: auto;
+  padding:10px 5px 10px 5px;
+  background-color: #a9bae0;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.banner-naziv>p{
+  color:white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.datum{
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: gray;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.banner-prevoz{
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+  height: 25px;
+  margin-bottom: 5px;
+}
+.banner-prevoz>p{
+  margin-right: 5px;
+}
+.cijena{
+  border:2px solid darkblue;
+  border-radius: 5px;
+  color:darkblue;
+  padding:10px 5px 10px 5px;
+  width:40%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+button{
+  border:2px solid orangered;
+  border-radius: 5px;
+  color:orangered;
+  padding:10px 5px 10px 5px;
+  font-size: 24px;
+  width:100%;
+  text-align: center;
+  background-color: white;
+  margin: 20px auto 20px auto;
+
+
+}
+.rezervisi{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+

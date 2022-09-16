@@ -1,0 +1,14 @@
+.grupa{
+  display: flex;
+  padding: 1%;
+}
+form{
+  margin-top: 1%;
+}
+.slika{
+  max-width: 600px;
+}
+.divslika{
+  margin:20px auto 20px auto;
+}
+

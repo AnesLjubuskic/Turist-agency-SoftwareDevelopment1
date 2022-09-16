@@ -1,0 +1,17 @@
+<div *ngIf="alert" class="alert alert-success" role="alert" >
+  Uspješno izvršeno dodavanje
+</div>
+<form [formGroup]="frmPrevoz">
+
+  <label  class="form-label">Id:</label>
+  <select  class="form-control" formControlName="putovanjeId">
+    <option  *ngFor="let x of posljPut" [value]=x.id>{{x.naziv}}</option>
+  </select>
+
+  <label>Prijevoz:</label><br/>
+  <select  class="form-control" formControlName="prevoznoSredstvoId">
+    <option  *ngFor="let x of listPrijevoz" [value]=x.id>{{x.naziv}}</option>
+  </select>
+</form>
+<button (click)="PostPutovanjePrevoz()" class="btn btn-primary" style="margin-top: 2%; margin-left: 90%">Prijevoz</button>
+

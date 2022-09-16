@@ -1,0 +1,25 @@
+.sve{
+  height: 100%;
+  width: 100%;
+  background-image: url("src/assets/img/sky.jpg");
+background-repeat: no-repeat;
+  background-size: cover;
+}
+.logoimg{
+  width: 40%;
+  height: 220px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+p{
+  text-align: center;
+  font-size: medium;
+  font-size: 20px;
+}
+
+.info1{
+  width: 80%;
+  padding-left: 5px;
+}
+
+

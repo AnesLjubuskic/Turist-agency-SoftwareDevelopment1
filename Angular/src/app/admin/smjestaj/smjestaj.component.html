@@ -1,0 +1,91 @@
+<div class="content">
+
+  <div class="dodavanje-box" >
+    <h2 style="margin-bottom: 3rem">Dodavanje države</h2>
+    <div class="drzavacontent">
+
+      <div class="jedaninput" [formGroup]="frmDrzava">
+      <label>Naziv:</label>
+      <input type="text" formControlName="naziv" class="form-control"  aria-label="naziv" aria-describedby="basic-addon1"  >
+       <br/> <small *ngIf="frmDrzava.get('naziv')!.invalid && frmDrzava.get('naziv')!.touched" class="text-danger" >Unos obavezan, samo slova</small>
+      </div>
+
+
+      <div class="jedaninput" [formGroup]="frmDrzava">
+      <label>Oznaka:</label>
+      <input formControlName="oznaka" type="text" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1" >
+        <br/> <small *ngIf="frmDrzava.get('oznaka')!.invalid && frmDrzava.get('oznaka')!.touched" class="text-danger">Unos obavezan, samo slova, maksimalna dužina 3 karaktera</small>
+      </div>
+
+      <button type="button"[disabled]="frmDrzava.invalid" class="btn btn-primary" (click)="spasiDrzavu()">Spasi</button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="dodavanje-box">
+    <h2 style="margin-bottom: 3rem">Dodavanje grada</h2>
+    <div class="drzavacontent">
+      <div class="jedaninput" [formGroup]="frmGrad" >
+        <label>Država:</label>
+        <select class="form-control" formControlName="drzavaId" type="text" id="jezik">
+          <option *ngFor="let x of drzavaList" [value]=x.id> {{x.naziv}} </option>
+        </select>
+      </div>
+      <div class="jedaninput" [formGroup]="frmGrad">
+        <label>Naziv:</label>
+        <input type="text" formControlName="naziv" class="form-control"  aria-label="naziv" aria-describedby="basic-addon1"  >
+      </div>
+      <div class="jedaninput" [formGroup]="frmGrad">
+        <label>Poštanski broj:</label>
+        <input type="text" class="form-control" formControlName="postanskiBroj" aria-label="oznaka" aria-describedby="basic-addon1" >
+      </div>
+      <button type="button" class="btn btn-primary" [disabled]="frmGrad.invalid" (click)="spasiGrad()">Spasi</button>
+    </div>
+  </div>
+
+<hr/>
+  <div class="dodavanje-box">
+  <h2 style="margin-bottom: 3rem">Dodavanje smještaja</h2>
+    <div class="smjestaj-kontejner">
+      <div class="frmSmjestaj-box">
+
+      <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+        <label>Naziv:</label>
+        <input type="text" formControlName="naziv" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1" >
+        <small class="text-danger" *ngIf="frmSmjestaj.get('naziv')?.invalid && frmSmjestaj.get('naziv')?.touched">Unos obavezan</small>
+      </div>
+      <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+        <label>Grad</label>
+        <select formControlName="gradId" class="form-control" type="text" id="grad">
+          <option *ngFor="let x of gradoviList" [value]=x.id> {{x.naziv}} </option>
+        </select>
+      </div>
+      <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+        <label>Adresa:</label>
+        <input type="text" formControlName="adresa" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1" >
+        <small class="text-danger" *ngIf="frmSmjestaj.get('adresa')?.invalid && frmSmjestaj.get('adresa')?.touched">Unos obavezan</small>
+      </div>
+      <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+        <label>Tip:</label>
+        <input type="text" formControlName="tip" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1" >
+        <small class="text-danger" *ngIf="frmSmjestaj.get('tip')?.invalid && frmSmjestaj.get('tip')?.touched">Unos obavezan</small>
+      </div>
+
+        </div>
+      <div class="frmSmjestaj-box">
+
+        <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+          <label>Kapacitet:</label>
+          <input type="number" formControlName="kapacitet" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1" >
+          <small class="text-danger" *ngIf="frmSmjestaj.get('kapacitet')?.invalid && frmSmjestaj.get('kapacitet')?.touched">Unos obavezan</small>
+        </div>
+        <div class="input-smjestaj" [formGroup]="frmSmjestaj">
+          <label>Opis:</label>
+          <textarea type="text" formControlName="opis" class="form-control"  aria-label="oznaka" aria-describedby="basic-addon1"  rows="8"></textarea>
+        </div>
+        </div>
+      <button type="button" class="btn btn-primary" id="spasiSmjestaj" (click)="spasiSmjestaj()">Spasi</button>
+    </div><br/>
+
+  </div>
+</div>

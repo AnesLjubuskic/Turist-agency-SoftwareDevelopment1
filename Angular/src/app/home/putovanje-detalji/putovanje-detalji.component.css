@@ -1,0 +1,137 @@
+.rezervisi-banner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  box-shadow: 3px 10px 16px -15px #A7A7A7;
+}
+.btn-nazad{
+  color:gray;
+  font-size: 40px;
+  cursor: pointer;
+margin-left:15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.btn-rezervisi{
+  border:2px solid #fd892f;
+  border-radius: 5px;
+  color:white;
+  padding:3px;
+  font-size: 18px;
+  width:10%;
+  text-align: center;
+  background-color: #fd892f;
+  margin: auto 20px auto 0px;
+  height:80%;
+
+}
+.btn-rezervisi:hover{
+  background-color: orangered;
+}
+.rezervacija {
+  border:2px solid orangered;
+  border-radius: 5px;
+  color:orangered;
+  padding:10px 5px 10px 5px;
+  font-size: 20px;
+  width:100%;
+  text-align: center;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.rezervacija-box{
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+.content{
+  width:85%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  box-shadow: 0px 3px 11px 1px #8A8A8A;
+  padding-bottom: 40px;
+}
+h1{
+  text-align: center;
+  font-size: 50px;
+}
+.header{
+  width:100%;
+  height:400px;
+}
+.naslov{
+  width:100%;
+  color: white;
+  background-color: #ffac65;
+  border:2px solid orangered;
+  border-top:none;
+  padding:5px;
+
+}
+h1{
+  margin-top:auto;
+  margin-bottom: auto;
+  text-align: center;
+  padding:5px;
+  letter-spacing: 1px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.datum{
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.cijena{
+  color: #e07015;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom:50px;
+}
+.lokacija-icon{
+  color: #0b0b7a;
+}
+.lokacija{
+  text-align: center;
+}
+table{
+  width: 100%;
+}
+.info{
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  width: 25%;
+  margin:30px auto 30px auto;
+  padding:10px;
+}
+.tabela-red{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+}
+.info-detalji{
+  color:gray;
+  display: flex;
+  flex-direction: row;
+}
+p{margin-bottom: 3px;}
+hr{
+  margin:0 auto 0 auto;
+  width: 98%;
+
+}
+h3{
+  font-weight: bold;
+  color: #050565;
+}

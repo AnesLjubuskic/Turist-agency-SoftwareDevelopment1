@@ -1,0 +1,21 @@
+<div class="loginforma">
+  <form [formGroup]="frmPlan">
+    <div class="mb-3">
+      <label >Naslov plana</label>
+      <br>
+      <br>
+      <br>
+      <input class="form-control" id='name' placeholder="Sarajevo" formControlName="name" [(ngModel)]="naslov">
+      <small *ngIf="frmPlan.get('name')!.invalid && frmPlan.get('name')!.touched" class="text-danger" >Obavezno unesite naslov plana</small><br>
+    </div>
+    <div class="mb-3">
+      <label >Sadržaj plana</label>
+      <br>
+      <br>
+      <br>
+      <textarea type="text"  class="form-control" id="text" placeholder="Vrijeme je bilo fino" formControlName="text" [(ngModel)]="text"></textarea>
+      <small *ngIf="frmPlan.get('text')!.invalid && frmPlan.get('text')!.touched" class="text-danger" >Obavezno unesite sadržaj</small><br>
+    </div>
+    <button type="submit" [disabled]="frmPlan.invalid" type="submit" class="btn btn-secondary" (click)="zavrsi()" >Završi</button>
+  </form>
+</div>

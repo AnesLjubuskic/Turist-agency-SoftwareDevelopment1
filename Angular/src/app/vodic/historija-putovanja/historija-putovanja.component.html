@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div class="button-list">
+    <button class="btn"  [routerLink]="'sva-putovanja'">Sva putovanja</button>
+    <button class="btn"  [routerLink]="'../buduca-putovanja'">Buduća putovanja</button>
+    <button class="btn"  [routerLink]="'../prosla-putovanja'">Završena putovanja</button>
+  </div>
+  <div class="content" *ngIf="this.podaci!=null">
+    <div class="putovanje" *ngFor="let p of this.podaci.dataItems">
+      <h3>{{p.naziv}}</h3>
+      <p style="font-size: 22px">{{p.datumOd | date}} - {{p.datumDo | date}}</p>
+      <div class="akcije-traka">
+        <button  *ngIf="uporediDatum(p.datumOd | date, this.datum | date)" class="btn" (click)="dodaj(p)">Kreiranje plana</button>
+        <button *ngIf="uporediDatum(p.datumOd | date, this.datum | date)" class="btn" (click)="pregled(p)">Pregled plana</button>
+        <button class="btn" type="button" data-toggle="modal" data-target="#exampleModal" (click)="setPutovanje(p.id)">Pregled putnika</button>
+      </div>
+    </div>
+  </div>
+  <!--<div  style="font-size: 10px" *ngIf="pageEvent">
+    <mat-grid-list cols="2" rowHeight="7:1">
+      <ng-container>
+        <mat-grid-tile>
+          pageIndex = {{getPageIndex()}}
+        </mat-grid-tile>
+      </ng-container>
+    </mat-grid-list>
+  </div>-->
+  <mat-paginator [length]="this.podaci.totalCount"
+                 [pageSize]="3"
+                 [pageSizeOptions]="[3,4,5,10]"
+                 aria-label="Select page"
+                 class="mat-elevation-z8">
+  </mat-paginator>
+</div>
+
+
+<div *ngIf="putovanje!=null" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="height:55px">
+        <h1 style=" color:black" class="modal-title" id="exampleModalLiveLabel"><b>Putovanje:  {{putovanje.naziv}}</b></h1>
+        <button type="button" class="btn-close" style="width:8px; height:8px" (click)="putovanje = null" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-pregled-putnika [putovanje]="putovanje"></app-pregled-putnika>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="putovanje = null " >Close</button>
+      </div>
+    </div>
+  </div>
+</div>

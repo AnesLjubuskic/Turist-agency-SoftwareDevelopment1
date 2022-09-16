@@ -1,0 +1,32 @@
+.newNotifications
+{
+  /*width: 30%;*/
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+}
+
+.sve{
+  display: flex;
+}
+.tabela
+{
+  /*width: 65%;*/
+  /*margin-left: 5%;*/
+}

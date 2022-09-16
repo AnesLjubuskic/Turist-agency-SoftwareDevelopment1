@@ -1,0 +1,48 @@
+<app-navigacija></app-navigacija>
+<!--<div class="rezervisi-banner">
+    <span class="btn-nazad" routerLink=""><</span>
+  <button class="btn-rezervisi">Rezerviši</button>
+</div>-->
+
+<div class="content" *ngIf="putovanje!=null">
+  <img [src]="putovanje.slika" class="header"/>
+  <div class="naslov">  <h1>{{putovanje.naziv.toUpperCase()}}</h1></div>
+  <p class="datum">{{putovanje.datumOd | date}} - {{putovanje.datumDo | date}}</p>
+  <p class="cijena">{{putovanje.cijena}} KM</p>
+  <div class="lokacija">
+   <mat-icon class="lokacija-icon">location_on</mat-icon>
+    <span style="color: #0b0b7a;" *ngFor="let s of putovanje.gradovi">|  {{s.naziv}}, {{s.drzava.naziv}}  |  </span>
+  </div>
+  <div class="info">
+    <table>
+      <tr><td>
+      <div class="tabela-red"><p>{{'Trajanje' | translate}}</p><div class="info-detalji"><mat-icon>watch_later</mat-icon>{{putovanje.trajanje}}<p style="margin-left: 5px"> dana</p></div></div></td></tr>
+      <hr/>
+      <tr><td>
+        <div class="tabela-red"><p>{{'Prevoz' | translate}}</p><div class="info-detalji"><mat-icon *ngIf="putovanje.tipPutovanja=='Autobusom'">directions_bus</mat-icon><mat-icon *ngIf="putovanje.tipPutovanja=='Avionom'">airplanemode_active</mat-icon>{{putovanje.tipPutovanja}}<p style="margin-left: 5px"></div></div></td></tr>
+      <hr/>
+      <tr><td>
+        <div class="tabela-red"><p>{{'Kapacitet' | translate}}</p><div class="info-detalji"><mat-icon>person</mat-icon>{{putovanje.brojPutnika}}<p style="margin-left: 5px"> osoba</p></div></div></td></tr>
+
+    </table>
+  </div>
+
+  <div class="info" style="width:90%">
+    <h3>{{'Smjestaj' | translate}}</h3>
+    <table>
+      <tr *ngFor="let s of putovanje.smjestaj"><td>
+        <div class="tabela-red"><p style="width: 30%">{{s.naziv}}</p><div class="info-detalji">{{s.opis}}</div></div></td></tr>
+      <hr/>
+    </table>
+  </div>
+
+  <div class="info" style="width:90%" *ngIf="this.plan!=null">
+    <h3>{{'PPP' | translate}}</h3>
+    <div *ngFor="let p of this.plan">
+    <p>{{p.name}}</p>
+    <p>{{p.text}}</p>
+    </div>
+  </div>
+
+  <div class="rezervacija-box"><button (click)="rezervacija()" class="rezervacija">{{'Rezervisi' | translate}}</button></div>
+</div>

@@ -1,0 +1,59 @@
+.content{
+
+}
+
+.dodavanje-box{
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+.drzavacontent{
+display: flex;
+
+}
+.jedaninput{
+  width: 45%;
+}
+.jedaninput>input{
+
+  display: inline;
+  margin-left: 1rem;
+  width:50%;
+  font-size: 14px;
+}
+.btn-primary{
+  position:relative;
+}
+.jedaninput>select{
+
+  display: inline;
+  margin-left: 1rem;
+  width:50%;
+  font-size: 14px;
+}
+.smjestaj-kontejner{
+  display: flex;
+  flex-direction: row;
+}
+.frmSmjestaj-box{
+  width:50%;
+  margin-right: 20px;
+}
+.input-smjestaj>input{
+  width:80%;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+#spasiSmjestaj{
+position: absolute;
+  right:5rem;
+}
+.input-smjestaj>select{
+  width:80%;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.input-smjestaj>textarea{
+  width:80%;
+  font-size: 14px;
+  margin-bottom: 15px;
+}

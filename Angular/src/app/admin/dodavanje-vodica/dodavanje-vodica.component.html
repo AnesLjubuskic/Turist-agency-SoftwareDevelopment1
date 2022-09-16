@@ -1,0 +1,59 @@
+<div *ngIf="alert" class="alert alert-success" role="alert" >
+  Uspješno registrovan novi vodič <b>{{ime}} {{prezime}}</b>
+</div>
+<div *ngIf="alertError" class="alert alert-danger" role="alert" >
+  Već postoji vodič sa tim korisničkim imenom
+</div>
+<h2>Dodaj novog vodiča</h2>
+<br/>
+<div class="dodavanje-vodica-body">
+  <div class="dodavanje-vodica-left">
+    <form [formGroup]="frmVodicPodaci">
+    <label>Ime</label><br/>
+    <input type="text" formControlName="ime" class="form-control"  aria-label="Ime" aria-describedby="basic-addon1" [(ngModel)]="ime"  >
+    <small *ngIf="frmVodicPodaci.get('ime')!.invalid && frmVodicPodaci.get('ime')!.touched" class="text-danger" >Unos obavezan</small><br/>
+    <label>Prezime</label><br/>
+      <input type="text" formControlName="prezime" class="form-control"  aria-label="Prezime" aria-describedby="basic-addon1" [(ngModel)]="prezime" >
+      <small  *ngIf="frmVodicPodaci.get('prezime')!.invalid && frmVodicPodaci.get('prezime')!.touched"  class="text-danger" >Unos obavezan</small>
+      <br/>
+    <label>Email</label><br/>
+      <input type="text" formControlName="email"class="form-control" aria-label="Email" aria-describedby="basic-addon1" [(ngModel)]="email"  >
+      <br/>
+    <label>Password</label><br/>
+      <input type="text" formControlName="lozinka" class="form-control"  aria-label="Password" aria-describedby="basic-addon1"  value="{{password}}" readonly >
+      <br/>
+    <label>Broj telefona</label><br/>
+      <input type="text" formControlName="brojTelefona" class="form-control"  aria-label="Telefon" aria-describedby="basic-addon1" placeholder="061000000" >
+      <small  *ngIf="frmVodicPodaci.get('brojTelefona')!.invalid && frmVodicPodaci.get('brojTelefona')!.touched"  class="text-danger" >Unos obavezan, broj treba sadržavati bar 9 cifara</small><br/>
+    </form>
+  </div>
+  <div class="dodavanje-vodica-right">
+    <form [formGroup]="frmVodicSlika">
+
+      <div class="mb-3">
+        <label for="datum" class="form-label">Datum rođenja:</label>
+        <input type="date" class="form-control" id="datum"   [(ngModel)]="datumRodj" formControlName="datumRodjenja" aria-describedby="emailHelp">
+      </div><br/>
+
+    <div class="input-group" style="margin-bottom:10px">
+      <div class="custom-file">
+        <label  for="slika" style="width:100px">Učitaj sliku</label>
+        <input type="file"  ngf class="form-control" (change)="onChange($event)"   >
+
+      </div>
+
+    </div>
+
+    <div class="slika">
+      <img [src]="slika" formControlName="slika" [(ngModel)]="slika" />
+    </div>
+    </form>
+    <div class="dugmad">
+      <button type="button" class="btn btn-primary" (click)="generisiPassword()">Generiši password</button>
+
+      <button [disabled]="frmVodicPodaci.invalid" type="button" (click)="posaljiNoviVodic()" class="btn btn-success">Spremi</button>
+    </div>
+
+  </div>
+
+</div>

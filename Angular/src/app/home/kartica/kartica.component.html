@@ -1,0 +1,22 @@
+<div class="putovanje-kartica" *ngIf="putovanje!=null">
+  <!--<img class="slika" src="{{putovanje.slika}}"/>-->
+  <img class="slika" [src]="putovanje.slika"/>
+  <div class="banner-naziv">  <p>{{putovanje.naziv.toUpperCase()}}</p></div>
+  <p class="datum">{{putovanje.datumOd.substring(0,10)}}</p>
+
+  <div class="info">
+  <div class="banner-prevoz" *ngIf="putovanje.tipPutovanja=='Avionom'"><mat-icon>flight</mat-icon>
+    <p>{{putovanje.tipPutovanja | translate}}</p></div>
+  <div class="banner-prevoz" *ngIf="putovanje.tipPutovanja=='Autobusom'"><mat-icon>directions_bus</mat-icon>
+    <p>{{putovanje.tipPutovanja | translate}}</p></div>
+    <div class="banner-prevoz" *ngIf="putovanje.tipPutovanja!='Avionom' && putovanje.tipPutovanja!='Autobusom'">
+      <p>{{putovanje.tipPutovanja}}</p></div>
+  <div class="banner-prevoz">
+    <mat-icon>local_hotel</mat-icon>
+    <p *ngFor="let s of putovanje.smjestaj">{{s.tip}}</p></div>
+  </div>
+  <div class="cijena">{{putovanje.cijena}} KM</div>
+  <div class="rezervisi"><button (click)="rezervisi(putovanje.id)">{{'Rezervisi' | translate}}</button></div>
+
+</div>
+

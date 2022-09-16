@@ -1,0 +1,20 @@
+
+
+<app-navigacija></app-navigacija>
+<!--<div class="banner">
+ &lt;!&ndash; <img routerLink="" src="assets/img/Logo.png" class="logoimg">&ndash;&gt;
+  <h1>Aktuelna putovanja</h1>
+</div>-->
+<!--<div class="banner2">
+  <img routerLink="" src="assets/img/putujmozajedno.png" class="putovanjaimg">
+</div>-->
+<div class="putovanjaimg">
+  <h2 class="putovanjeTekst">{{'Slogan' | translate}}</h2>
+</div>
+<!--<img routerLink="" src="assets/img/putujmozajedno.png" class="putovanjaimg">-->
+<div class="content" *ngIf="listPutovanja!=null" >
+  <mat-grid-list  cols="2" rowHeight="580px" >
+   <mat-grid-tile *ngFor="let p of filtriranje()" ><app-kartica [putovanje]="p"></app-kartica></mat-grid-tile>
+  </mat-grid-list>
+</div>
+

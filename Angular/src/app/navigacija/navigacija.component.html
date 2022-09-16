@@ -1,0 +1,56 @@
+<!--
+<div class="navigacija">
+  <div class="lijevo">
+  <img routerLink="" src="assets/img/Logo.png" class="logoimg">
+  <div class="search-class">
+    <div class="iconbox">
+      <img  class="searchicon" src="https://www.pngall.com/wp-content/uploads/8/Magnifying-Glass-Search-PNG-Images.png"/>
+    </div>
+  <input type="search" id="searchbox" placeholder="Search" [(ngModel)]="filter" (change)="funcPretraga(filter)"/>
+  </div>
+</div>
+<div class="linkovibox">
+  <a class="link" routerLink="">Početna</a>
+  <a class="link" routerLink="info" >O nama</a>
+  <a class="link" routerLink="aplikacija">Postani dio tima</a>
+  <a class="link" routerLink="feedback">Iskažite mišljenje</a>
+</div>
+</div>
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" style="margin-left: 1%">TravelPoint</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="">{{'Pocetna' | translate}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/info">{{'Info' | translate}} </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aplikacija">{{'Tim' | translate}} </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/feedback">{{'Feedback' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/feedback-list">{{'FeedbackList' | translate}}</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input (input)="funcPretraga()" class="form-control mr-sm-2" [(ngModel)]="filter" name="filter" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="col-2">
+      <select class="custom-select" (change)="changeLang($event.target)">
+        <option value="ba" [selected]="lang=='ba'">Bosanski</option>
+        <option value="en"  [selected]="lang=='en'">English</option>
+      </select>
+    </div>
+  </div>
+</nav>

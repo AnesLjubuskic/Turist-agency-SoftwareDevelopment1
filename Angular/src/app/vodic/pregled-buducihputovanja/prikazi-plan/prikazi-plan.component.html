@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="button-list">
+  </div>
+  <div class="content" *ngIf="this.podaci!=null">
+    <div class="putovanje" *ngFor="let p of this.podaci">
+      <h3>{{p.name}}</h3>
+      <p>{{p.text}}</p>
+      <div class="akcije-traka">
+        <button class="btn" (click)="izbrisi(p)">Izbrisi plan</button>
+        <button class="btn" [routerLink]="'/homevodic/sva-putovanja'">Vrati na putovanja</button>
+      </div>
+    </div>
+  </div>
+</div>

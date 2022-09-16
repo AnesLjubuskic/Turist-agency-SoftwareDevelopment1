@@ -1,0 +1,100 @@
+
+<div class="container">
+
+  <div class="content" *ngIf="this.podaci!=null">
+    <table class="table table-secondary table-striped  table-bordered" style="margin-top: 5%">
+      <tr class="thead-dark">
+        <th>#</th>
+        <th>Naziv</th>
+        <th>Datum</th>
+        <th>Tip Putovanja</th>
+        <th>Cijena</th>
+        <th>Broj Putnika</th>
+        <th>Detalji</th>
+        <th>Grupe</th>
+        <th>Obriši</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let s of this.podaci.dataItems">
+        <td>{{s.id}}</td>
+        <td>{{s.naziv}}</td>
+        <td>{{s.datumOd}}</td>
+        <td>{{s.tipPutovanja}}</td>
+        <td>{{s.cijena}}</td>
+        <td>{{s.brojPutnika}}</td>
+        <td><button type="button" class="btn btn-light" [routerLink]="['../../detalji',s.id]">Detalji</button></td>
+        <td><button type="button" class="btn btn-light" (click)="open(content,s)">Dodaj grupu</button></td>
+        <td (click)="obrisi(s.id)"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="grey" class="bi bi-trash-fill" viewBox="0 0 16 16">
+          <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+        </svg></td>
+
+      </tr>
+      </tbody>
+    </table>
+    <!--<div  style="font-size: 10px" *ngIf="pageEvent">
+      <mat-grid-list cols="2" rowHeight="7:1">
+        <ng-container>
+          <mat-grid-tile>
+            pageIndex = {{getPageIndex()}}
+          </mat-grid-tile>
+        </ng-container>
+      </mat-grid-list>
+    </div>-->
+    <mat-paginator [length]="this.podaci.totalCount"
+                   [pageSize]="3"
+                   [pageSizeOptions]="[3,4,5,10]"
+                   aria-label="Select page"
+                   class="mat-elevation-z8">
+    </mat-paginator>
+  </div>
+
+
+  <div *ngIf="putovanje!=null" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="height:55px">
+          <h1 style=" color:black" class="modal-title" id="exampleModalLiveLabel"><b>Putovanje:  {{putovanje.naziv}}</b></h1>
+          <button type="button" class="btn-close" style="width:8px; height:8px" (click)="putovanje = null" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-pregled-putnika [putovanje]="putovanje"></app-pregled-putnika>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="putovanje = null " >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Dodajte grupe za putovanje</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="frmGrupa" >
+
+        <mat-form-field appearance="fill" style="font-size: 15px; display: inline; width: 50%" >
+          <mat-label>PutpvanjeId</mat-label>
+          <input matInput  formControlName="putovajeId" [(ngModel)]="putovajeId">
+        </mat-form-field>
+        <div style="display: flex;color: black">
+          <mat-form-field appearance="fill" style="font-size: 15px; display: inline; width: 50%" >
+            <mat-label>Broj putnika</mat-label>
+            <input matInput  formControlName="brojPutnika" [(ngModel)]="brojPutnika">
+          </mat-form-field>
+        </div>
+        <div style="color: black">
+          <label  class="form-label">Vodic:</label>
+          <select  class="form-control" formControlName="vodicId" [(ngModel)]="vodicId">
+            <option  *ngFor="let x of vodiciPodaci" [value]="x.id">{{x.korisnickoIme}}</option>
+          </select>
+        </div>
+      </form>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="sacuvajGrupu()">Sacuvaj grupu</button>
+    </div>
+  </ng-template>

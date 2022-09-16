@@ -1,0 +1,51 @@
+
+.logoimg
+{
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 130px;
+  height: 130px;
+}
+nav
+{
+  background-color: #004aad;
+  /*height: 150px;*/
+}
+.loginforma{
+  margin: 10%;
+  background-color: white;
+}
+
+.loginRoute{
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+}
+
+.navbar-toggler-icon{
+  background-color: black;
+  color: black;
+}
+
+.dugme{
+  text-decoration: none;
+  color: white;
+  margin:5px;
+  margin-left: 80%;
+}
+.dropdown-menu
+{
+  background-color: #6a6c6e;
+}
+
+
+@media only screen and (min-width: 991px) {
+  .dropdownUser
+   {
+     margin-left: 20px;
+   }
+  .dropdownNotifikacija
+  {
+    margin-left: 60vw;
+  }
+}

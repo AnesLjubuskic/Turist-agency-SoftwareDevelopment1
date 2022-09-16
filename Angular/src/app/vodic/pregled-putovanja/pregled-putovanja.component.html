@@ -1,0 +1,85 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Lista autobusa">
+    <table class="table table-secondary table-striped  table-bordered" style="margin-top: 5%">
+      <tr class="thead-dark">
+        <th>#</th>
+        <th>Naziv</th>
+        <th>Kapacitet</th>
+        <th>Klima</th>
+        <th>WiFi</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let s of getAutobus()">
+        <td>{{s.id}}</td>
+        <td>{{s.naziv}}</td>
+        <td>{{s.kapacitet}}</td>
+        <td>{{s.klima}}</td>
+        <td>{{s.wiFi}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-tab>
+  <mat-tab label="Lista aviokompanija"><table class="table table-secondary table-striped  table-bordered" style="margin-top: 5%">
+    <tr class="thead-dark">
+      <th>#</th>
+      <th>Naziv</th>
+      <th>Kapacitet</th>
+      <th>Mail</th>
+      <th>Telefon</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let s of getAvion()">
+      <td>{{s.id}}</td>
+      <td>{{s.naziv}}</td>
+      <td>{{s.kapacitet}}</td>
+      <td>{{s.mail}}</td>
+      <td>{{s.telefon}}</td>
+    </tr>
+    </tbody>
+  </table>
+  </mat-tab>
+</mat-tab-group>
+
+<!--
+
+<div class="dugme">
+  <button class="btn btn-secondary" (click)="getApiAutobus()">Lista autobusa</button>
+  <button class="btn btn-secondary" (click)="getAPIAvion()">Lista aviokompanija</button>
+</div>
+<table class="table table-secondary table-striped  table-bordered" *ngIf="autobus">
+  <tr class="thead-dark">
+    <th>#</th>
+    <th>Naziv</th>
+    <th>Kapacitet</th>
+    <th>Klima</th>
+    <th>WiFi</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let s of getAutobus()">
+    <td>{{s.id}}</td>
+    <td>{{s.naziv}}</td>
+    <td>{{s.kapacitet}}</td>
+    <td>{{s.klima}}</td>
+    <td>{{s.wiFi}}</td>
+  </tr>
+  </tbody>
+</table>
+<table class="table table-secondary table-striped  table-bordered" *ngIf="avioKompanija">
+  <tr class="thead-dark">
+    <th>#</th>
+    <th>Naziv</th>
+    <th>Kapacitet</th>
+    <th>Mail</th>
+    <th>Telefon</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let s of getAvion()">
+    <td>{{s.id}}</td>
+    <td>{{s.naziv}}</td>
+    <td>{{s.kapacitet}}</td>
+    <td>{{s.mail}}</td>
+    <td>{{s.telefon}}</td>
+  </tr>
+  </tbody>
+</table>
+-->

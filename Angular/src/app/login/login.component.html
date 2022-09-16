@@ -1,0 +1,24 @@
+<div class="loginStil">
+<div class="loginforma">
+  <form [formGroup]="frmLogin">
+    <div class="mb-3">
+      <label for="txtKorisnickoIme" class="form-label">Email</label>
+      <input type="email" class="form-control" id="txtKorisnickoIme" formControlName="txtKorisnickoIme" [(ngModel)]="txtKorisnickoIme" placeholder="Korisnik">
+      <small *ngIf="frmLogin.get('txtKorisnickoIme')!.invalid && frmLogin.get('txtKorisnickoIme')!.touched" class="text-danger" >Obavezan unos korisnickog imena</small><br/>
+    </div>
+    <div class="mb-3">
+      <label for="txtLozinka" class="form-label">Password</label>
+      <input type="password" class="form-control" id="txtLozinka" [(ngModel)]="txtLozinka" formControlName="txtLozinka" placeholder="Lozinka">
+      <small *ngIf="frmLogin.get('txtLozinka')!.invalid && frmLogin.get('txtLozinka')!.touched" class="text-danger" >Obavezan unos lozinke</small><br/>
+    </div>
+    <div class="mb-3">
+      <label for="txtStep" class="form-label">Two Step (Optional)</label>
+      <input type="password" class="form-control" id="txtStep" [(ngModel)]="txtStep" formControlName="txtStep" placeholder="0000">
+</div>
+  <div style="margin-left: 60%">
+    <button  type="submit" class="btn btn-success" (click)="SendMail()">2 koraka autentifikacija</button>
+    <button [disabled]="frmLogin.invalid" type="submit" class="btn btn-success" style="margin-left: 2%" (click)="LoginBtn()">Dalje</button>
+  </div>
+  </form>
+</div>
+</div>

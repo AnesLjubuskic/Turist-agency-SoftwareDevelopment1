@@ -1,0 +1,41 @@
+<div class="sve">
+<div class="newNotifications col-md-4">
+<div *ngIf="signalRService.messages.length==0">
+  <p>Nemate notifikacija</p>
+</div>
+<div *ngFor="let m of signalRService.messages" >
+  <div class="mb-2 mt-2">
+    <div><strong>Date</strong> {{m.DateTime }}</div>
+    <div><strong>Message</strong> {{m.Text}}</div>
+    <hr>
+  </div>
+</div>
+</div>
+<div class="tabela col-md-8">
+  <table class="table table-secondary table-striped  table-bordered">
+    <tr class="thead-dark">
+      <th>Procitana</th>
+      <th>Datum</th>
+      <th>Sadrzaj</th>
+      <th>Akcija</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let s of getPoruke()">
+      <td *ngIf="!s.isRead"><span class="badge badge-danger">New</span></td>
+      <td *ngIf="s.isRead"><span class="badge badge-primary">Read</span></td>
+      <td>{{s.dateTime | date:'short'}}</td>
+      <td>{{s.text}}</td>
+      <td><button class="btn btn-secondary" (click)="markAsRead(s.id)">Oznaci kao procitano</button></td>
+
+    </tr>
+    </tbody>
+  </table>
+  <mat-paginator
+    [length]="this.poruke.totalCount"
+    [pageSize]="3"
+    [pageSizeOptions]="[3,4,5]"
+    aria-label="Select page"
+    class="mat-elevation-z8">
+  </mat-paginator>
+</div>
+</div>

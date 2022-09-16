@@ -1,0 +1,13 @@
+.info{
+  font-size: 12px;
+  color: #5d6267;
+}
+.thead-dark{
+  font-size: 16px;
+}
+tbody{
+  font-size: 12px;
+}
+pagination-controls{
+  font-size: 10px;
+}

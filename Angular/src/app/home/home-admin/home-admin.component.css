@@ -1,0 +1,99 @@
+*{
+  box-sizing: border-box;
+}
+
+/*
+html {
+  min-height: 100%;
+}
+.flexContainer{
+  display: flex;
+}
+button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 150px;
+  width: 200px;
+  height: 150px;
+}
+.container{
+  margin-top: 100px;
+  width: 30%;
+  margin-left: 50px;
+}
+.content{
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border:2px solid gray;
+  margin-top: 100px;
+  width:60%;
+  margin-right: 50px;
+}
+*/
+
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 18%;
+  border-right: none;
+  background: #525856;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+
+  margin-left: 32px;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: start;
+  padding: 1%;
+  flex: 1;
+  border: none;
+  margin-top: 20px;
+  margin-right: 2%;
+  overflow-y: scroll;
+
+}
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+  overflow-y: hidden;
+}
+.menu-button
+{
+  font-size: medium;
+  margin-bottom: 5%;
+}
+button{
+  width: 100%;
+  display: inline;
+}
+
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+}
+
+

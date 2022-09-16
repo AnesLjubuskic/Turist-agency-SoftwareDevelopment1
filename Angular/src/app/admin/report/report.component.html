@@ -1,0 +1,39 @@
+<div class="btn">
+  <button type="button"  class="btn btn-primary" (click)="makePDF()">Download PDF</button>
+</div>
+<div id="content" #content>
+  <h1>Travel Point izvještaj</h1>
+  <h4>Period: Jan 1,2022 - {{this.datum | date}}</h4>
+  <br/>
+  <div class="generalStats">
+    <div class="card">
+      <div class="cardContent">
+        <p>Ukupno putovanja:</p>
+        <h2>{{this.ukupnoPutovanja}}</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardContent">
+        <p>Ukupno zaposlenih</p>
+        <h2>{{this.ukupnoZaposleni}}</h2>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div id="testChart">
+    <p><b>Top 5 destinacija</b></p>
+    <canvas id="myChart" width="500" height="400"></canvas>
+  </div>
+
+  <div id="tripsLastYear">
+    <p><b>Broj putovanja </b></p>
+    <canvas id="tripsLastYearChart" width="500" height="400"></canvas>
+  </div>
+
+  <div id="revenueLastYear">
+    <p><b>Prihodi po mjesecima </b></p>
+    <canvas id="revenueLastYearChart" width="500" height="400"></canvas>
+  </div>
+</div>
+
+

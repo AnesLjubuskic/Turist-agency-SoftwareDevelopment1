@@ -1,0 +1,34 @@
+<div style="height: 100%; width: 100%" class="sve">
+<app-navigacija></app-navigacija>
+<div class="content mat-elevation-z9" style="height: 67%; width: 60%; margin-top: 7%; margin-left: 20%; margin-right: 20%; padding:1%; background-color: white; opacity: 0.9;
+">
+  <form [formGroup]="frmZanimanje">
+    <div class="mb-3">
+      <label class="form-label">{{'Ime' | translate}}</label>
+      <input class="form-control" id='ime' placeholder="Ime" formControlName="ime" [(ngModel)]="ime">
+      <small *ngIf="frmZanimanje.get('ime')!.invalid && frmZanimanje.get('ime')!.touched"
+             class="text-danger" >{{'ImeAlert' | translate}}</small><br/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">{{'Prezime' | translate}}</label>
+      <input  class="form-control" id="prezime" placeholder="Prezime" formControlName="prezime" [(ngModel)]="prezime">
+      <small *ngIf="frmZanimanje.get('prezime')!.invalid && frmZanimanje.get('prezime')!.touched"
+             class="text-danger" >{{'PrezimeAlert' | translate}}</small><br/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">{{'Zanimanje' | translate}}</label>
+      <input  class="form-control" id="zanimanje" placeholder="Turizam" formControlName="zanimanje" [(ngModel)]="zanimanje">
+      <small *ngIf="frmZanimanje.get('zanimanje')!.invalid && frmZanimanje.get('zanimanje')!.touched"
+             class="text-danger" >{{'EduAlert' | translate}}</small><br/>
+    </div>
+    <div class="form-group">
+      <label>{{'CV' | translate}}</label>
+      <div class="slikaUplatniceDiv">
+        <input type="file" ngf  class="form-control" (change)="onChange($event)"   >
+        <img [src]="cv" width="200px" height="200px" alt="" formControlName="slikaUplatnice" [(ngModel)]="cv" *ngIf="cv">
+      </div>
+    </div>
+    <button type="submit" routerLink="/aplikacijaCV" [disabled]="frmZanimanje.invalid" class="btn btn-primary" (click)="apliciraj()">{{'Apliciraj' | translate}}</button>
+  </form>
+</div>
+</div>

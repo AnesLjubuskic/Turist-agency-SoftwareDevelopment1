@@ -1,0 +1,40 @@
+
+      <div class="putovanje-info">
+        <div class="info"><p>Datum: {{putovanje.datumOd | date}}</p></div>
+        <div class="info"><p>Tip putovanja: {{putovanje.tipPutovanja}}</p></div>
+        <div class="info"><p>Kapacitet: {{putovanje.brojPutnika}}</p></div>
+      </div>
+      <br/>
+      <h2 style="color: black">Rezervisali: </h2>
+      <div class="tabela">
+        <table class="table table-secondary table-striped  table-bordered">
+          <tr class="thead-dark">
+            <th>Ime</th>
+            <th>Email</th>
+            <th>Broj telefona</th>
+          </tr>
+          <tbody >
+          <tr *ngFor="let r of rezervacije | paginate: {id:'rezervacije_pagination',
+           itemsPerPage:4,
+           currentPage:page,
+           totalItems:totalRecords}">
+            <td>{{r.ime}} {{r.prezime}}</td>
+            <td>{{r.email}}</td>
+            <td>{{r.brojTelefona}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <div>
+          <pagination-controls id="rezervacije_pagination" (pageChange)="page=$event"
+          [maxSize]="maxSize" [directionLinks]="directionLinks"></pagination-controls>
+        </div>
+      </div>
+      <!-- <mat-paginator [length]="this.rezervacije.totalCount"
+                      [pageSize]="3"
+                      [pageSizeOptions]="[3,4,5]"
+                      aria-label="Select page"
+                      class="mat-elevation-z8">
+       </mat-paginator>-->
+
+
+

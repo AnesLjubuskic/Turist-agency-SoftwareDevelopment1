@@ -1,0 +1,19 @@
+<div style="height: 100%; width: 100%" class="sve">
+  <app-navigacija></app-navigacija>
+<div class="content mat-elevation-z9" style="height: 50%; width: 60%; margin-top: 15%; margin-left: 20%; margin-right: 20%; padding:1%; background-color: white; opacity: 0.9;
+">
+  <form [formGroup]="frmFeedback">
+    <div class="mb-3">
+      <label class="form-label">{{'Lokacija' | translate}}</label>
+      <input class="form-control" id='ime' placeholder="Turska" formControlName="ime" [(ngModel)]="ime">
+      <small *ngIf="frmFeedback.get('ime')!.invalid && frmFeedback.get('ime')!.touched" class="text-danger" >{{'LokacijaAlert' | translate}}</small><br>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">{{'Experience' | translate}}</label>
+      <textarea type="text"  class="form-control" id="sadrzaj" placeholder="Vrijeme je bilo fino" formControlName="sadrzaj" [(ngModel)]="sadrzaj"></textarea>
+      <small *ngIf="frmFeedback.get('sadrzaj')!.invalid && frmFeedback.get('sadrzaj')!.touched" class="text-danger" >{{'ExperienceAlert' | translate}}</small><br>
+    </div>
+    <button type="submit" [disabled]="frmFeedback.invalid" type="submit" class="btn btn-primary" (click)="apliciraj()">{{'Send' | translate}}</button>
+  </form>
+</div>
+</div>

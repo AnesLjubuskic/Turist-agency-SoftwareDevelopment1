@@ -1,0 +1,72 @@
+
+    <table class="table table-secondary table-striped  table-bordered" style="margin-top: 5%">
+      <tr class="thead-dark">
+        <th>#</th>
+        <th>Naziv</th>
+        <th>Tip Putovanja</th>
+        <th>Cijena</th>
+        <th>Broj Putnika</th>
+        <th>Dodaj plan</th>
+        <th>Pregled planova</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let s of listPutovanja">
+        <td>{{s.id}}</td>
+        <td>{{s.naziv}}</td>
+        <td>{{s.tipPutovanja}}</td>
+        <td>{{s.brojPutnika}}</td>
+        <td>{{s.wiFi}}</td>
+        <td>
+          <a style="color:blue" (click)="dodaj(s)">Dodaj Plan</a><br>
+        </td>
+        <td>
+          <a style="color:blue" (click)="pregled(s)">Pregled Planova</a><br>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+<!--
+
+<div class="dugme">
+  <button class="btn btn-secondary" (click)="getApiAutobus()">Lista autobusa</button>
+  <button class="btn btn-secondary" (click)="getAPIAvion()">Lista aviokompanija</button>
+</div>
+<table class="table table-secondary table-striped  table-bordered" *ngIf="autobus">
+  <tr class="thead-dark">
+    <th>#</th>
+    <th>Naziv</th>
+    <th>Kapacitet</th>
+    <th>Klima</th>
+    <th>WiFi</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let s of getAutobus()">
+    <td>{{s.id}}</td>
+    <td>{{s.naziv}}</td>
+    <td>{{s.kapacitet}}</td>
+    <td>{{s.klima}}</td>
+    <td>{{s.wiFi}}</td>
+  </tr>
+  </tbody>
+</table>
+<table class="table table-secondary table-striped  table-bordered" *ngIf="avioKompanija">
+  <tr class="thead-dark">
+    <th>#</th>
+    <th>Naziv</th>
+    <th>Kapacitet</th>
+    <th>Mail</th>
+    <th>Telefon</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let s of getAvion()">
+    <td>{{s.id}}</td>
+    <td>{{s.naziv}}</td>
+    <td>{{s.kapacitet}}</td>
+    <td>{{s.mail}}</td>
+    <td>{{s.telefon}}</td>
+  </tr>
+  </tbody>
+</table>
+-->

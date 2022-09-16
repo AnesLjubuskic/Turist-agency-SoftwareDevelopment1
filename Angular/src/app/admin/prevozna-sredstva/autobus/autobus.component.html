@@ -1,0 +1,28 @@
+<div  *ngIf="slanje" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">Dodaj autobus</h5>
+        <button type="button" class="btn-close"aria-label="Close" (click)="zatvori()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="frmBus">
+          <label class="form-label">Naziv</label>
+          <input class="form-control" formControlName="naziv" [(ngModel)]='naziv'  placeholder="Naziv">
+          <small *ngIf="frmBus.get('naziv')!.invalid && frmBus.get('naziv')!.touched" class="text-danger" >Unos obavezan</small>
+
+          <label class="form-label">Kapacitet</label>
+          <input type="number" class="form-control"  formControlName="kapacitet"  [(ngModel)]='kapacitet' placeholder="Kapacitet">
+          <label class="form-label">Klima</label>
+          <input type="checkbox" class="cekbox" formControlName="klima" [(ngModel)]="klima">
+          <label class="form-label">WiFi</label>
+          <input type="checkbox"  class="cekbox" formControlName="wiFi" [(ngModel)]="wiFi" >
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="zatvori()" >Zatvori</button>
+        <button type="button" class="btn btn-primary" (click)="snimi()"  [disabled]="frmBus.invalid">Spasi</button>
+      </div>
+    </div>
+  </div>
+</div>

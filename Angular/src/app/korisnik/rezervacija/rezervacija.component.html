@@ -1,0 +1,46 @@
+<app-navigacija></app-navigacija>
+<div *ngIf="alert" class="alert alert-success" role="alert" >
+  {{'ReservationAlert' | translate}}
+</div>
+<div class="content">
+  <div class="oPutovanju">
+    <h1 routerLink="/detalji/{{this.id}}">{{this.putovanje.naziv}}</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX4Os_cCgqZ08kmbaOKJ5IZbYmIG37ES4Zg&usqp=CAU" class="slika">
+    <h2 routerLink="/detalji/{{this.id}}">{{this.putovanje.cijena}} KM</h2>
+    <h4 routerLink="/detalji/{{this.id}}">{{this.putovanje.detalji}} KM</h4>
+    <h4 routerLink="/detalji/{{this.id}}">{{this.putovanje.datumOd | date: 'dd.MM.yyyy'}} - {{this.putovanje.datumDo | date: 'dd.MM.yyyy'}}</h4>
+
+    <button type="submit" (click)="SacuvajRezervaciju()" class="dalje" style="margin-top: 2%; margin-left: 2%;">{{'Potvrda' | translate}}</button>
+
+  </div>
+  <div class="formaRezerv">
+  <form  [formGroup]="frmRezervacija" enctype="multipart/form-data" >
+
+  <div class="form-group">
+    <label >{{'Ime' | translate}}</label>
+    <input type="text" class="form-control" formControlName="Ime"  [(ngModel)]="ime"  placeholder="Ime">
+  </div>
+  <div class="form-group">
+    <label >  {{'Prezime' | translate}}</label>
+    <input type="text" class="form-control" formControlName="Prezime"  [(ngModel)]="prezime"  placeholder="Prezime">
+  </div>
+  <div class="form-group">
+    <label >Email</label>
+    <input type="text" class="form-control" formControlName="Email"  [(ngModel)]="email"  placeholder="primjer@mail.com">
+  </div>
+  <div class="form-group">
+    <label>  {{'Telefon' | translate}}</label>
+    <input type="text" class="form-control" formControlName="BrojTelefona" [(ngModel)]="brojTelefona"  placeholder="000/000-000">
+  </div>
+ <div class="form-group">
+      <label>  {{'Uplatnica' | translate}}</label>
+      <div class="slikaUplatniceDiv">
+      <input type="file" ngf  class="form-control" (change)="onChange($event)"   >
+      <img [src]="slikaUplatnice" width="150px" height="80vh" alt="" formControlName="slikaUplatnice" [(ngModel)]="slikaUplatnice">
+      </div>
+ </div>
+</form>
+</div>
+</div>
+
+

@@ -1,0 +1,25 @@
+
+.dugme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 25%;
+  margin-bottom: 10%;
+
+}
+
+button{
+  width: 300px;
+  height: 100px;
+}
+.thead-dark{
+  font-size: 16px;
+}
+tbody{
+  font-size: 12px;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+

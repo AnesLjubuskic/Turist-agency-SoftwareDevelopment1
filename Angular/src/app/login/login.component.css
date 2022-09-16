@@ -1,0 +1,26 @@
+.logoimg
+{
+  width: 70px;
+  height: 70px;
+}
+nav
+{
+  background-color: #004aad;
+  height: 90px;
+}
+.loginforma{
+  background-color: transparent;
+  padding: 2%;
+  width: 70%;
+color: white;
+}
+
+.loginStil{
+  height: 100%;
+  width: 100%;
+  background-image: url("src/assets/img/putujmozajedno.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 25%;
+  padding-top: 15%;
+}

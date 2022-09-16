@@ -1,0 +1,14 @@
+.dugme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 25%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+button{
+  width: 300px;
+  height: 100px;
+}
+

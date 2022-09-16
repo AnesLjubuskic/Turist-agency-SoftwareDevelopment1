@@ -1,0 +1,22 @@
+.logoimg
+{
+  width: 70px;
+  height: 70px;
+}
+nav
+{
+  background-color: #004aad;
+  height: 90px;
+}
+.loginforma{
+  margin: 5%;
+  background-color: white;
+  padding: 2%;
+}
+
+.sve
+{
+  background-image: url("src/assets/img/backgroundFeedback.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
